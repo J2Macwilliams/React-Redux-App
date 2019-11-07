@@ -11,7 +11,8 @@ export const failure = (data) => ({ type: FAILURE, payload: data })
 export const getArray = () => async (dispatch) => {
     try {
         dispatch(loading());
-        axios.get('')
+        //Brewdog/s beer recipes. 3600 requests per hour limit
+        axios.get('https://api.punkapi.com/v2/')
             .then(response => {
                 console.log(response)
                 // const info = response.json()
