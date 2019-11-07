@@ -2,12 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import { getBeers } from "../actions";
 
+
 const BeerList = (props) => {
 console.log("Beer" , props);
 return (
     <>
-    <button>Beer</button>
+    <button>Slainte'</button>
+    {props.isLoading && <div>spinner</div>}
+    {props.error && <div>{props.error.message}</div>}
+    
     </>
 )
 }
-export default BeerList;
+const mapDispatchToProps = () => {
+    return {
+       getBeers
+    }
+}
+export default connect(mapDispatchToProps , {})(BeerList);
