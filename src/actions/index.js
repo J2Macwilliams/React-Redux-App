@@ -12,11 +12,10 @@ export const getBeers = () => async (dispatch) => {
     try {
         dispatch(loading());
         //Brewdog/s beer recipes. 3600 requests per hour limit
-        axios.get
-        // ('https://api.punkapi.com/v2/')
+        axios.get('https://api.punkapi.com/v2/beers')
             .then(response => {
-                console.log(response)
-                const info = response.json()
+                console.log("Thirsty?", response.data)
+                const info = response.data
                 dispatch(
                     success(info)
                 )
@@ -26,3 +25,4 @@ export const getBeers = () => async (dispatch) => {
         dispatch(failure(error))
     }
 };
+

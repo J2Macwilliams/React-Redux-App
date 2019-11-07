@@ -8,7 +8,7 @@ const BeerList = (props) => {
     console.log("Beer", props);
     return (
         <>
-            <button>Slainte'</button>
+            <button onClick={() => props.dispatch(getBeers())}>Slainte'</button>
             {props.isLoading && <div>spinner</div>}
             {props.error && <div>{props.error.message}</div>}
             <Grid >
@@ -24,9 +24,11 @@ const BeerList = (props) => {
         </>
     )
 }
-const mapDispatchToProps = () => {
-    return {
-        getBeers
-    }
-}
-export default connect(mapDispatchToProps, {})(BeerList);
+// const mapDispatchToProps = () => {
+//     return {
+//         getBeers
+//     }
+// }
+export default connect(state => {
+    return state;
+})(BeerList);
