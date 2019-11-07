@@ -1,7 +1,7 @@
 import { LOADING, SUCCESS, FAILURE } from '../actions/index';
 
 const initialState = {
-    names: [],
+    beers: [],
     error: null,
     isLoading: false
 }
@@ -18,13 +18,13 @@ export const reducer = (state = initialState, action) => {
         case SUCCESS:
             return {
                 ...state,
-                names: action.payload,
+                beers: action.payload,
                 isLoading: false
             }
         case FAILURE:
             return {
                 ...state,
-                names: [],
+                beers: [],
                 error: action.payload,
                 isLoading: false
             }
