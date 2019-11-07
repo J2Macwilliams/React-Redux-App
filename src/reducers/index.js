@@ -1,6 +1,6 @@
 import { LOADING, SUCCESS, FAILURE } from '../actions/index';
 
-const intialState = {
+const initialState = {
     names: [],
     error: null,
     isLoading: false
